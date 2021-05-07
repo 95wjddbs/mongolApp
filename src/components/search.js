@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Form, Item, Input, Label, Left, Right, Body, Button, Icon, Thumbnail } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, Left, Right, Body, Button, Icon, Thumbnail, Footer } from 'native-base';
 
-export default class search extends Component {
+import Footer_Component from './Footer_Component'
+
+export default class Search extends Component {
   render() {
     return (
       <Container>
@@ -25,6 +27,10 @@ export default class search extends Component {
           <Form>
           </Form>
         </Content>
+
+        <Footer style={{height:80}}>
+          <Footer_Component />
+        </Footer>
       </Container>
     );
   }

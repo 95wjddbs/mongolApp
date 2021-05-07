@@ -1,0 +1,14 @@
+{
+    "Header" :{
+        "MainPage": "",
+        "Shopping_Cart" : "장바구니",
+        "Banner1_Header": "기획전 상세",
+        "Detail1_Header": "기획전 상세",
+        "Banner2_Header": "이벤트 상세",
+        "Banner2_Header_List": "이벤트",
+        "Product_Header": "상품상세",
+        "Brand_Header": "브랜드",
+        "Brand_Header_List": "adidas Young Athletes",
+        "Banner3_Header": "기획전 상세"
+    }
+}

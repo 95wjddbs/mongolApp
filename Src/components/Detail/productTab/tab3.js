@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import {ScrollView, Image, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
 import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Left, Body, Title, Right, View, Thumbnail, List, ListItem } from 'native-base';
 
-import Tab1 from './tabOne.js';
-
-
-function tabTwo(props){
+function tab3(props){
     const uri = "https://facebook.github.io/react-native/docs/assets/favicon.png";
     return (
-      <Container>          
+      <Container>       
         <Content style={{marginTop:30}}>
           <View>
             <List>
@@ -19,17 +16,17 @@ function tabTwo(props){
                   <Text>18:45:47</Text>
                 </Left>
                 <Body>
-                  <Text note>REDH1345EA21</Text>
-                  <Text>KB카드 (LG페이)</Text>
+                  <Text note>충전</Text>
                   <Text>500,000T</Text>
+                  <Text>기프트 카드</Text>
                 </Body>
               </ListItem>
             </List>
           </View>
         </Content>
- 
+
       </Container>
     );
   }
 
-  export default tabTwo;
+  export default tab3;
