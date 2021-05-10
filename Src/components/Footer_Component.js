@@ -1,36 +1,60 @@
-import React, { Component } from 'react';
-import {ScrollView, Image, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Left, Body, Title, Right, View, Thumbnail } from 'native-base';
+import React from 'react';
+import {Image} from 'react-native';
+import {Container, Footer, FooterTab, Button, Text} from 'native-base';
 
-function Footer_Component(){
-    return(
+const ImageButton = ({onPress, source, text}) => {
+  return (
+    <Button onPress={onPress}>
+      <Image style={{height: 30, resizeMode: 'contain'}} source={source} />
+      <Text style={{fontSize: 9, color: 'black'}}>{text}</Text>
+    </Button>
+  );
+};
+
+function Footer_Component(props) {
+  return (
     <Container>
-        <Footer style={{height:80}}>
-          <FooterTab style={{backgroundColor:'white', alignItems:'center'}}>
-            <Button onPress={()=> {props.navigation.openDrawer('Category'); }}>
-              <Image style={{height:30, resizeMode:'contain'}} source={require('../images/common/menu_icon01.png')} />
-              <Text style={{fontSize:9, color:'black'}}>CATEGORY  </Text>
-            </Button>
-            <Button onPress={()=> {props.navigation.navigate('myPoint'); }}>
-              <Image style={{height:30, resizeMode:'contain'}} source={require('../images/common/menu_icon02.png')} />
-              <Text style={{fontSize:9, color:'black'}}>Point</Text>
-            </Button>
-            <Button onPress={()=> {props.navigation.navigate('Search'); }}>
-              <Image style={{height:30, resizeMode:'contain'}} source={require('../images/common/menu_icon03.png')} />
-              <Text style={{fontSize:9, color:'black'}}>Search</Text>
-            </Button>
-            <Button onPress={()=> {props.navigation.navigate('Wishlist'); }}>
-              <Image style={{height:30, resizeMode:'contain'}} source={require('../images/common/menu_icon04.png')} />
-              <Text style={{fontSize:9, color:'black'}}>Wishlist</Text>
-            </Button>
-            <Button>
-              <Image style={{height:30, resizeMode:'contain'}} source={require('../images/common/menu_icon05.png')} />
-              <Text style={{fontSize:9, color:'black'}}>MY</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
-    );
-  }
+      <Footer style={{height: 80}}>
+        <FooterTab style={{backgroundColor: 'white', alignItems: 'center'}}>
+          <ImageButton
+            onPress={() => {
+              props.navigation.toggleDrawer();
+            }}
+            text="CATEGORY"
+            source={require('../images/common/menu_icon01.png')}
+          />
+          <ImageButton
+            onPress={() => {
+              props.navigation.navigate('myPoint');
+            }}
+            text="Point"
+            source={require('../images/common/menu_icon02.png')}
+          />
+          <ImageButton
+            onPress={() => {
+              props.navigation.navigate('Search');
+            }}
+            text="Search"
+            source={require('../images/common/menu_icon03.png')}
+          />
+          <ImageButton
+            onPress={() => {
+              props.navigation.navigate('Wishlist');
+            }}
+            text="Wishlist"
+            source={require('../images/common/menu_icon04.png')}
+          />
+          <ImageButton
+            onPress={() => {
+              props.navigation.navigate('Wishlist');
+            }}
+            text="MY"
+            source={require('../images/common/menu_icon05.png')}
+          />
+        </FooterTab>
+      </Footer>
+    </Container>
+  );
+}
 
 export default Footer_Component;
