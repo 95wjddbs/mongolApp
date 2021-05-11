@@ -29,28 +29,42 @@ import Tab2 from './MD_Pick_Tab/Tab2';
 import Tab3 from './MD_Pick_Tab/Tab3';
 import Tab4 from './MD_Pick_Tab/Tab4';
 import Tab5 from './MD_Pick_Tab/Tab5';
+import {color} from 'react-native-reanimated';
 
 function MD_Pick_Tab(props) {
   return (
     <View style={{marginBottom: -200, height: 1050}}>
-      <Tabs
-        style={{
-          marginTop: 30,
-          backgroundColor: 'white',
-        }}>
-        <Tab style={{}} heading="1">
+      <Tabs tabBarUnderlineStyle={{backgroundColor: 'red'}}>
+        <Tab
+          backgroundImage="url('../images/common/md_pick_bg.png')"
+          tabStyle={{backgroundColor: 'red'}}
+          activeTabStyle={{backgroundColor: 'red'}}
+          backgroundImage={require('../images/common/md_pick_bg.png')}
+          heading="img">
           <Tab1 />
         </Tab>
-        <Tab heading="2">
+        <Tab
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
+          heading="2">
           <Tab2 />
         </Tab>
-        <Tab heading="3">
+        <Tab
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
+          heading="3">
           <Tab3 />
         </Tab>
-        <Tab heading="4">
+        <Tab
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
+          heading="4">
           <Tab4 />
         </Tab>
-        <Tab heading="5">
+        <Tab
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
+          heading="5">
           <Tab5 />
         </Tab>
       </Tabs>

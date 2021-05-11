@@ -37,7 +37,7 @@ const MainStackNavigator = () => {
       <Stack.Screen
         name="Search"
         component={Search}
-        options={{title: '검색', headerShown: false}}
+        options={{title: '검색'}}
       />
       <Stack.Screen
         name="Shopping_Cart"
