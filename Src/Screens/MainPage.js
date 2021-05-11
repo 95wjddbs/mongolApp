@@ -19,6 +19,7 @@ import Horizonal_Scroll_Square from '../Components/Horizonal_Scroll_Square';
 import Flatlist_Slider from '../Components/Flatlist_Slider';
 import Tabview from '../Components/Tabview';
 import Image_On_Text from '../Components/Image_On_Text';
+import Product_List from '../Components/Product_List';
 
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;
@@ -145,6 +146,7 @@ const MainPage = props => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               alignItems: 'center',
+              marginTop: -30,
               marginLeft: 15,
               marginRight: 15,
             }}>
@@ -198,45 +200,13 @@ const MainPage = props => {
           />
         </TouchableOpacity>
 
-        <Image_On_Text />
+        <Image_On_Text {...props} />
 
         <TouchableOpacity
           onPress={() => {
             props.navigation.navigate('productDetail1');
           }}>
-          <View style={{flex: 1}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                marginTop: -300,
-              }}>
-              <Image
-                style={{width: '45%', resizeMode: 'contain'}}
-                source={require('../images/test_img/re_1.png')}
-              />
-              <Image
-                style={{width: '45%', resizeMode: 'contain'}}
-                source={require('../images/test_img/re_2.png')}
-              />
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                marginTop: -460,
-                marginBottom: -200,
-              }}>
-              <Image
-                style={{width: '45%', resizeMode: 'contain'}}
-                source={require('../images/test_img/re_4.png')}
-              />
-              <Image
-                style={{width: '45%', resizeMode: 'contain'}}
-                source={require('../images/test_img/re_3.png')}
-              />
-            </View>
-          </View>
+          <Product_List />
         </TouchableOpacity>
       </Content>
 

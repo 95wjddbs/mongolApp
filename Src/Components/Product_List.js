@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import Tab1_Item from './Tab1_Item';
+import Product_Item from './Product_Item';
 
 const productList = [
   {
@@ -33,10 +33,10 @@ const productList = [
   },
 ];
 
-const Tab1 = () => {
+const Product_List = () => {
   const renderItem = ({item}) => {
     return (
-      <Tab1_Item
+      <Product_Item
         pt_image={item.pt_image1}
         price={item.key}
         sub={item.sub}
@@ -60,4 +60,4 @@ const Tab1 = () => {
   );
 };
 
-export default Tab1;
+export default Product_List;

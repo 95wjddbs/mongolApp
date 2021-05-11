@@ -36,14 +36,6 @@ function tab1(props) {
               A relaxed hoodie for comfortable layering.
             </Text>
           </View>
-          <Text>
-            The times are changing. As we become more aware of our surroundings,
-            our impact and our identities, we look to the future to help us
-            inform the present. The adidas Woven Pocket Hoodie takes a
-            forward-thinking approach and seamlessly merges function with
-            fashion. An essential layer for exploring the modern urban
-            landscape.
-          </Text>
         </View>
       </Content>
     </Container>

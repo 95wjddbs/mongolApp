@@ -32,31 +32,29 @@ import Tab5 from './MD_Pick_Tab/Tab5';
 
 function MD_Pick_Tab(props) {
   return (
-    <Content>
-      <View style={{marginBottom: -200}}>
-        <Tabs
-          style={{
-            marginTop: 30,
-            backgroundColor: 'white',
-          }}>
-          <Tab style={{}} heading="1">
-            <Tab1 />
-          </Tab>
-          <Tab heading="2">
-            <Tab2 />
-          </Tab>
-          <Tab heading="3">
-            <Tab3 />
-          </Tab>
-          <Tab heading="4">
-            <Tab4 />
-          </Tab>
-          <Tab heading="5">
-            <Tab5 />
-          </Tab>
-        </Tabs>
-      </View>
-    </Content>
+    <View style={{marginBottom: -200, height: 1050}}>
+      <Tabs
+        style={{
+          marginTop: 30,
+          backgroundColor: 'white',
+        }}>
+        <Tab style={{}} heading="1">
+          <Tab1 />
+        </Tab>
+        <Tab heading="2">
+          <Tab2 />
+        </Tab>
+        <Tab heading="3">
+          <Tab3 />
+        </Tab>
+        <Tab heading="4">
+          <Tab4 />
+        </Tab>
+        <Tab heading="5">
+          <Tab5 />
+        </Tab>
+      </Tabs>
+    </View>
   );
 }
 
