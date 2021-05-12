@@ -6,28 +6,28 @@ const productList = [
   {
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117750382-46cd8780-b24e-11eb-841a-ea518ce2dccb.png',
-    price: '239,000T',
+    price: '239,000₮',
     sub: 'WB COLOR',
     third: '6antfgeqaseed mansdsda',
   },
   {
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117750386-47feb480-b24e-11eb-8a3c-a440cd6026e3.png',
-    price: '211,000T',
+    price: '211,000₮',
     sub: 'TERREX AGRAVIC TR W',
     third: '6antfgeqaseed mansdsda',
   },
   {
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117750389-48974b00-b24e-11eb-92e3-2ad09672dbe7.png',
-    price: '998,900T',
+    price: '998,900₮',
     sub: 'ELLA',
     third: '6antfgeqaseed mansdsda',
   },
   {
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117750390-492fe180-b24e-11eb-9a08-120ffe541ef6.png',
-    price: '425,000T',
+    price: '425,000₮',
     sub: 'Marvin Suede Mini',
     third: '6antfgeqaseed mansdsda',
   },

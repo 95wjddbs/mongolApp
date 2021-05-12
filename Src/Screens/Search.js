@@ -22,7 +22,7 @@ export default class Search extends Component {
   render() {
     return (
       <Container>
-        <Header
+        {/* <Header
           style={{
             backgroundColor: 'white',
             alignItems: 'center',
@@ -46,7 +46,7 @@ export default class Search extends Component {
               source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
             />
           </Right>
-        </Header>
+        </Header> */}
         <Content>
           <Form></Form>
         </Content>

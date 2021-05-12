@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
 
-import {StyleSheet, Text, View, Image, ListView} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 class Product_Item extends Component {
-  render() {
+  render(props) {
     return (
       <View style={styles.ProductContainer}>
-        <Image style={styles.ImgContent} source={{uri: this.props.pt_image}} />
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate('productDetail1');
+          }}>
+          <Image
+            style={styles.ImgContent}
+            source={{uri: this.props.pt_image}}
+          />
+        </TouchableOpacity>
         <View style={styles.TextContent}>
           <Text style={styles.price}>{this.props.price}</Text>
           <Text style={styles.sub}>{this.props.sub}</Text>
@@ -20,6 +28,7 @@ class Product_Item extends Component {
 const styles = StyleSheet.create({
   ProductContainer: {
     width: '50%',
+    paddingBottom: 20,
   },
   ImgContent: {
     height: 190,

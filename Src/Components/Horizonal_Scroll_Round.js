@@ -5,7 +5,8 @@ class HorizonalScrollView extends Component {
   render() {
     return (
       <ScrollView
-        style={{marginTop: -120}}
+        contentOffset={{x: 85}}
+        style={{marginTop: -120, width: '100%'}}
         horizontal={true}
         showsHorizontalScrollIndicator={true}
         onMomentumScrollEnd={() => {}}>

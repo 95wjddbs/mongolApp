@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {AppRegistry, ScrollView, View, StyleSheet, Image} from 'react-native';
 import {FlatListSlider} from 'react-native-flatlist-slider';
 
 const images = [
   {
     banner: require('../images/test_img/banner01.png'),
-    dsec: '1/4',
   },
   {
     banner: require('../images/test_img/banner01-1.png'),
@@ -18,7 +16,7 @@ const images = [
   },
 ];
 
-function Flatlist_Slider(navigation) {
+function Flatlist_Slider(props) {
   return (
     <FlatListSlider
       data={images}
@@ -28,7 +26,7 @@ function Flatlist_Slider(navigation) {
       imageKey={'banner'}
       timer={5000}
       onPress={() => {
-        navigation.navigate('Detail0');
+        props.navigation.navigate('Detail0');
       }}
       local></FlatListSlider>
   );

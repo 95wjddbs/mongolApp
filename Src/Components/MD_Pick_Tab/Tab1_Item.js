@@ -9,8 +9,18 @@ class Product_Item extends Component {
         <Image style={styles.ImgContent} source={{uri: this.props.pt_image}} />
         <View style={styles.TextContent}>
           <Text style={styles.price}>{this.props.price}</Text>
-          <Text style={styles.sub}>{this.props.sub}</Text>
-          <Text style={styles.third}>{this.props.third}</Text>
+          <Text
+            style={styles.sub}
+            adjustsFontSizeToFit={true}
+            numberOfLines={1}>
+            {this.props.sub}
+          </Text>
+          <Text
+            style={styles.third}
+            adjustsFontSizeToFit={true}
+            numberOfLines={1}>
+            {this.props.third}
+          </Text>
         </View>
       </View>
     );

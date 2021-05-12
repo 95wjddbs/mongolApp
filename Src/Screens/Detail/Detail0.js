@@ -27,7 +27,7 @@ import {
 
 import Footer_Component from '../../Components/Footer_Component';
 
-function Detail1(props) {
+function Detail0(props) {
   return (
     <Container>
       <Header style={{backgroundColor: 'white'}}>
@@ -118,4 +118,4 @@ function Detail1(props) {
   );
 }
 
-export default Detail1;
+export default Detail0;

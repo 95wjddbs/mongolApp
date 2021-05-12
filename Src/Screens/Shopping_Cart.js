@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {
   Container,
   Header,
@@ -27,16 +27,18 @@ export default class Shopping_Cart extends Component {
               <Icon name="arrow-back" style={{color: 'black'}} />
             </Button>
           </Left>
-          <Body>
-            <Title style={{color: 'black'}}>장바구니</Title>
-          </Body>
-          <Right>
+          <Right style={{flexDirection: 'row', alignItems: 'center'}}>
             <TouchableOpacity
               onPress={() => props.navigation.navigate('Search')}>
               <Thumbnail
                 style={{height: 35, resizeMode: 'contain'}}
                 source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
               />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('Shopping_Cart')}>
+              <Icon name="cart-outline" style={{color: 'black'}} />
             </TouchableOpacity>
           </Right>
         </Header>

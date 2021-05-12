@@ -4556,7 +4556,7 @@ interpret@^1.0.0:
   resolved "https://registry.npmjs.org/interpret/-/interpret-1.4.0.tgz"
   integrity sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
 
-invariant@^2.2.2, invariant@^2.2.4:
+invariant@>=2, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -7140,10 +7140,15 @@ react-native-image-slider-box@1.0.12:
   dependencies:
     react-native-snap-carousel "*"
 
-react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.2.1, react-native-iphone-x-helper@^1.3.0:
+react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.2.1, react-native-iphone-x-helper@^1.3.0, react-native-iphone-x-helper@^1.3.1:
   version "1.3.1"
   resolved "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
+
+react-native-linear-gradient@2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+  integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
 react-native-reanimated@2.1.0:
   version "2.1.0"
@@ -7154,6 +7159,13 @@ react-native-reanimated@2.1.0:
     fbjs "^3.0.0"
     mockdate "^3.0.2"
     string-hash-64 "^1.0.3"
+
+react-native-responsive-fontsize@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-responsive-fontsize/-/react-native-responsive-fontsize-0.5.0.tgz#76940797bebdce146ead84beb4418fb14309c980"
+  integrity sha512-yeZ6ub1QhBmK5cwkj2+SzrcNOE5OXS9ritLDF3X7x7X6aRbOGXAOKQ7VoLnctOeLxJla98n+Fcs5+0rtvYwlBA==
+  dependencies:
+    react-native-iphone-x-helper "^1.3.1"
 
 react-native-responsive-screen@1.4.2:
   version "1.4.2"
@@ -7258,6 +7270,13 @@ react-navigation-drawer@2.7.1:
   version "2.7.1"
   resolved "https://registry.npmjs.org/react-navigation-drawer/-/react-navigation-drawer-2.7.1.tgz"
   integrity sha512-W36XDl+Ts5uGNr6Ryt1xGrQ5JTeddPmvR31bNX7o6Oo7OsdPZ3b1+oMDoRClGca0d6Ggo7btIqiWUsUshm+p/g==
+
+react-navigation-header-buttons@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/react-navigation-header-buttons/-/react-navigation-header-buttons-7.0.1.tgz#298cba26aa27d9695e1f450e7eb3a175c0c3d2ed"
+  integrity sha512-ggIXhshnRv3Kaqw1ZlZLqMPtBOsLY4FLxxEOCHKe/XuWVfZGPmMqZBC/S4H8cQgIGRyFNOrypXF69Hb7fXMWNg==
+  dependencies:
+    invariant ">=2"
 
 react-navigation-stack@react-navigation/stack:
   version "2.1.1"

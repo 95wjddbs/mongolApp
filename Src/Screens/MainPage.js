@@ -11,6 +11,7 @@ import {
   Right,
   View,
   Thumbnail,
+  Icon,
 } from 'native-base';
 import Footer_Component from '../Components/Footer_Component';
 import Carousel from '../Components/Carousel';
@@ -20,6 +21,7 @@ import Flatlist_Slider from '../Components/Flatlist_Slider';
 import Tabview from '../Components/Tabview';
 import Image_On_Text from '../Components/Image_On_Text';
 import Product_List from '../Components/Product_List';
+import Font_Gradient from '../Components/Font_Gradient';
 
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;
@@ -34,7 +36,7 @@ const MainPage = props => {
             source={require('../images/common/logo.png')}
           />
         </Left>
-        <Right style={{flexDirection: 'row'}}>
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
           <TouchableOpacity onPress={() => props.navigation.navigate('Search')}>
             <Thumbnail
               style={{height: 35, resizeMode: 'contain'}}
@@ -44,16 +46,14 @@ const MainPage = props => {
 
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Shopping_Cart')}>
-            <Thumbnail
-              style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-              source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-            />
+            <Icon name="cart-outline" style={{color: 'black'}} />
           </TouchableOpacity>
         </Right>
       </Header>
 
       <Content style={{flex: 1}}>
         <Flatlist_Slider {...props} />
+
         <View style={{flex: 1}}>
           <View
             style={{
@@ -75,58 +75,27 @@ const MainPage = props => {
               onPress={() => {
                 props.navigation.navigate('Detail1');
               }}>
-              <Text style={{fontFamily: 'Roboto_medium', fontSize: 12}}>
-                VIEW MORE
-              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'Roboto_medium',
+                    fontSize: 12,
+                  }}>
+                  VIEW MORE
+                </Text>
+                <Icon
+                  name="chevron-forward"
+                  style={{color: 'grey', fontSize: 15}}
+                />
+              </View>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              props.navigation.navigate('Detail0');
-            }}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginTop: -200,
-              }}>
-              <View
-                style={{width: '42%', marginLeft: 15, flexDirection: 'column'}}>
-                <Image
-                  style={{resizeMode: 'contain', width: '100%'}}
-                  source={require('../images/test_img/pe_3.png')}
-                />
-                <View style={{marginTop: -220}}>
-                  <Text style={{fontWeight: 'bold', fontSize: 14}}>
-                    O HUI Purchase Apprec...
-                  </Text>
-                  <Text note style={{fontSize: 11}}>
-                    Free gift random (Until sold out)
-                  </Text>
-                </View>
-              </View>
 
-              <View style={{width: '42%', marginLeft: 15}}>
-                <Image
-                  style={{width: '100%', resizeMode: 'contain'}}
-                  source={require('../images/test_img/pe_1.png')}
-                />
-                <View style={{marginTop: -220}}>
-                  <Text style={{fontWeight: 'bold', fontSize: 14}}>
-                    airvita Purchase Appre.....
-                  </Text>
-                  <Text note style={{fontSize: 11}}>
-                    Free gift random (Until sold out)
-                  </Text>
-                </View>
-              </View>
-              <Image
-                style={{width: '42%', resizeMode: 'contain', marginLeft: 15}}
-                source={require('../images/test_img/pe_2.png')}
-              />
-            </View>
-          </TouchableOpacity>
+          <Horizonal_Scroll_Square {...props} />
         </View>
         <TouchableOpacity
           onPress={() => {
@@ -134,7 +103,7 @@ const MainPage = props => {
           }}>
           <View style={{flex: 1}}>
             <Image
-              style={{resizeMode: 'contain', width: '100%', marginTop: -200}}
+              style={{resizeMode: 'contain', width: '100%'}}
               source={require('../images/test_img/banner02.png')}
             />
           </View>
@@ -146,7 +115,6 @@ const MainPage = props => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginTop: -30,
               marginLeft: 15,
               marginRight: 15,
             }}>
@@ -158,21 +126,45 @@ const MainPage = props => {
               }}>
               MD Pick
             </Text>
-            <Text style={{fontFamily: 'Roboto_medium', fontSize: 12}}>
-              VIEW MORE
-            </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_medium',
+                  fontSize: 12,
+                }}>
+                VIEW MORE
+              </Text>
+              <Icon
+                name="chevron-forward"
+                style={{color: 'grey', fontSize: 15}}
+              />
+            </View>
           </View>
-
-          <Tabview />
+          <React.Fragment>
+            <Tabview {...props} />
+          </React.Fragment>
         </View>
 
         <View
           style={{
             backgroundColor: '#F7F7F7',
             alignItems: 'center',
-            paddingTop: 100,
-            marginTop: -100,
+            marginTop: -200,
           }}>
+          <Font_Gradient />
+          <Text
+            style={{
+              paddingBottom: 40,
+              paddingTop: 40,
+              fontSize: 24,
+              fontWeight: 'bold',
+            }}>
+            NEW BRAND
+          </Text>
           <Horizonal_Scroll_Round {...props} />
           <Image
             style={{
@@ -202,12 +194,46 @@ const MainPage = props => {
 
         <Image_On_Text {...props} />
 
-        <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate('productDetail1');
-          }}>
-          <Product_List />
-        </TouchableOpacity>
+        <View style={{flex: 1}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginLeft: 10,
+              marginRight: 10,
+              paddingBottom: 10,
+              marginTop: -40,
+            }}>
+            <Text
+              style={{
+                fontFamily: 'Roboto_medium',
+                fontWeight: 'bold',
+                fontSize: 22,
+              }}>
+              Best Buy Lease
+            </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Roboto_medium',
+                  fontSize: 12,
+                }}>
+                VIEW MORE
+              </Text>
+              <Icon
+                name="chevron-forward"
+                style={{color: 'grey', fontSize: 15}}
+              />
+            </View>
+          </View>
+        </View>
+
+        <Product_List {...props} />
       </Content>
 
       <Footer style={{height: 80}}>

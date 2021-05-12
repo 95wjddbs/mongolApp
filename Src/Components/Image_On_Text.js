@@ -38,7 +38,7 @@ const Image_On_Text = props => {
                 Ket (Chdndpc)
               </Text>
               <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 14}}>
-                3,111,920 T
+                3,111,920 ₮
               </Text>
             </View>
           </View>
@@ -65,7 +65,7 @@ const Image_On_Text = props => {
                 Ket (Chdndpc)
               </Text>
               <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 14}}>
-                111,920 T
+                111,920 ₮
               </Text>
             </View>
           </View>
@@ -93,14 +93,16 @@ const Image_On_Text = props => {
                 alignItems: 'center',
                 backgroundColor: 'white',
               }}>
-              <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 13}}>
-                18K Rose Gold Venetian ...
+              <Text
+                style={{marginTop: 10, fontWeight: 'bold', fontSize: 13}}
+                numberOfLines={1}>
+                18K Rose Gold Venetian Travel lode
               </Text>
               <Text note style={{fontSize: 12}}>
                 Ket (Chdndpc)
               </Text>
               <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 14}}>
-                22,111,920 T
+                22,111,920 ₮
               </Text>
             </View>
           </View>
@@ -120,14 +122,16 @@ const Image_On_Text = props => {
                 alignItems: 'center',
                 backgroundColor: 'white',
               }}>
-              <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 13}}>
-                L'OCCITANE b3nfnnH...
+              <Text
+                numberOfLines={1}
+                style={{marginTop: 10, fontWeight: 'bold', fontSize: 13}}>
+                L'OCCITANE b3nfnnH bracelet
               </Text>
               <Text note style={{fontSize: 12}}>
                 Ket (Chdndpc)
               </Text>
               <Text style={{marginTop: 10, fontWeight: 'bold', fontSize: 14}}>
-                111,920 T
+                111,920 ₮
               </Text>
             </View>
           </View>
