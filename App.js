@@ -75,6 +75,7 @@ const MainStackNavigator = props => {
             </TouchableOpacity>
           ),
         }}
+        options={{title: '검색'}}
       />
       <Stack.Screen
         name="Shopping_Cart"

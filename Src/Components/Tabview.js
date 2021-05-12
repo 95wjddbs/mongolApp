@@ -5,6 +5,7 @@ import Tab2 from './MD_Pick_Tab/Tab2';
 import Tab3 from './MD_Pick_Tab/Tab3';
 import Tab4 from './MD_Pick_Tab/Tab4';
 import Tab5 from './MD_Pick_Tab/Tab5';
+import {color} from 'react-native-reanimated';
 
 function MD_Pick_Tab(props) {
   return (
@@ -27,13 +28,8 @@ function MD_Pick_Tab(props) {
           <Tab1 />
         </Tab>
         <Tab
-          activeTabStyle={{
-            backgroundColor: 'white',
-            height: '70%',
-            borderRadius: 20,
-            top: '15%',
-          }}
-          activeTextStyle={{color: 'red'}}
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
           heading="2">
           <Tab2 />
         </Tab>
@@ -45,6 +41,8 @@ function MD_Pick_Tab(props) {
             top: '15%',
           }}
           activeTextStyle={{color: 'red'}}
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
           heading="3">
           <Tab3 />
         </Tab>
@@ -56,6 +54,8 @@ function MD_Pick_Tab(props) {
             top: '15%',
           }}
           activeTextStyle={{color: 'red'}}
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
           heading="4">
           <Tab4 />
         </Tab>
@@ -67,6 +67,8 @@ function MD_Pick_Tab(props) {
             top: '15%',
           }}
           activeTextStyle={{color: 'red'}}
+          tabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{backgroundColor: 'transparent'}}
           heading="5">
           <Tab5 />
         </Tab>
