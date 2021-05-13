@@ -47,52 +47,52 @@ export default function Event_List(props) {
 
       <Content>
         <ScrollView>
-          <View style={{alignItems: 'center', marginTop: 25}}>
+          <View style={{alignItems: 'center', marginTop: 16, marginBottom: 16}}>
             <Text style={{fontSize: 24, fontWeight: 'bold'}}>EVENT</Text>
           </View>
           <View>
-            <View style={{marginBottom: -10}}>
+            <View>
               <Image
-                style={{resizeMode: 'contain', width: '100%'}}
+                style={{resizeMode: 'cover', width: '100%', height: 90}}
                 source={require('../../images/test_img/banner02.png')}
               />
-              <View style={{marginTop: -10}}>
+              <View padder>
                 <Text numberOfLines={1} style={{fontWeight: 'bold'}}>
                   O HUI Purchase Apprec O HUI Purchase Apprec hahahahahappp
                 </Text>
                 <Text note>Free gift random (Until sold out)</Text>
               </View>
             </View>
-            <View style={{marginBottom: -10}}>
+            <View>
               <Image
-                style={{resizeMode: 'contain', width: '100%'}}
+                style={{resizeMode: 'cover', width: '100%', height: 90}}
                 source={require('../../images/test_img/banner02.png')}
               />
-              <View style={{marginTop: -10}}>
+              <View padder>
                 <Text numberOfLines={1} style={{fontWeight: 'bold'}}>
                   O HUI Purchase Apprec O HUI Purchase Apprec hahahahahappp
                 </Text>
                 <Text note>Free gift random (Until sold out)</Text>
               </View>
             </View>
-            <View style={{marginBottom: -10}}>
+            <View>
               <Image
-                style={{resizeMode: 'contain', width: '100%'}}
+                style={{resizeMode: 'cover', width: '100%', height: 90}}
                 source={require('../../images/test_img/banner02.png')}
               />
-              <View style={{marginTop: -10}}>
+              <View padder>
                 <Text numberOfLines={1} style={{fontWeight: 'bold'}}>
                   O HUI Purchase Apprec O HUI Purchase Apprec hahahahahappp
                 </Text>
                 <Text note>Free gift random (Until sold out)</Text>
               </View>
             </View>
-            <View style={{marginBottom: -10}}>
+            <View>
               <Image
-                style={{resizeMode: 'contain', width: '100%'}}
+                style={{resizeMode: 'cover', width: '100%', height: 90}}
                 source={require('../../images/test_img/banner02.png')}
               />
-              <View style={{marginTop: -10}}>
+              <View padder>
                 <Text numberOfLines={1} style={{fontWeight: 'bold'}}>
                   O HUI Purchase Apprec O HUI Purchase Apprec hahahahahappp
                 </Text>
