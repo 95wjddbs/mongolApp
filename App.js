@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
 import {Button, Image, TouchableOpacity} from 'react-native';
 import {Icon, Text, View} from 'native-base';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DrawerActions,
+  useNavigation,
+} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import MainPage from './Src/Screens/MainPage';
 
+import Category from './Src/Screens/Category';
 import myPoint from './Src/Screens/myPoint';
 import Search from './Src/Screens/Search';
 import Wishlist from './Src/Screens/Wishlist';
+import Mypage from './Src/Screens/Mypage';
 import Shopping_Cart from './Src/Screens/Shopping_Cart';
 
 import Detail0 from './Src/Screens/Detail/Detail0';
@@ -18,7 +24,10 @@ import Event_List from './Src/Screens/Detail/Event_List';
 import productDetail1 from './Src/Screens/Detail/productDetail1';
 import Brand from './Src/Screens/Detail/Brand';
 import brandDetail from './Src/Screens/Detail/brandDetail';
+import Coupon from './Src/Screens/Coupon';
+
 import Flatlist_Slider from './Src/Components/Flatlist_Slider';
+import Horizonal_Scroll_Square from './Src/Components/Horizonal_Scroll_Square';
 
 import Footer_Component from './Src/Components/Footer_Component';
 
@@ -27,6 +36,30 @@ Text.defaultProps.allowFontScaling = false;
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+const DrawerComponent = () => {
+  return (
+    <Drawer.Navigator
+      initialRouteName="MainPage"
+      drawerType="slide"
+      drawerPosition="left"
+      drawerStyle={{
+        backgroundColor: 'red',
+        width: 200,
+      }}
+      drawerContentOptions={{
+        activeTintColor: 'red',
+        activeBackgroundColor: 'skyblue',
+      }}
+      drawerContent={props => <SideDrawer {...props} />}>
+      <Drawer.Screen
+        name="Category"
+        component={Category}
+        options={{headerShown: false}}
+      />
+    </Drawer.Navigator>
+  );
+};
 
 const MainStackNavigator = props => {
   return (
@@ -65,6 +98,7 @@ const MainStackNavigator = props => {
         name="Search"
         component={Search}
         options={{
+          headerShown: false,
           headerTitle: 'Please enter a search term',
           headerTitleStyle: {fontSize: 15},
           headerRight: () => (
@@ -75,7 +109,6 @@ const MainStackNavigator = props => {
             </TouchableOpacity>
           ),
         }}
-        options={{title: '검색'}}
       />
       <Stack.Screen
         name="Shopping_Cart"
@@ -92,6 +125,11 @@ const MainStackNavigator = props => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Category"
+        component={DrawerComponent}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="myPoint"
         component={myPoint}
         options={{headerShown: false}}
@@ -99,6 +137,11 @@ const MainStackNavigator = props => {
       <Stack.Screen
         name="Wishlist"
         component={Wishlist}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Mypage"
+        component={Mypage}
         options={{headerShown: false}}
       />
 
@@ -138,8 +181,19 @@ const MainStackNavigator = props => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Coupon"
+        component={Coupon}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
         name="Flatlist_Slider"
         component={Flatlist_Slider}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Horizonal_Scroll_Square"
+        component={Horizonal_Scroll_Square}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

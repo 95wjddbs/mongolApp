@@ -1,17 +1,10 @@
 import React, {Component} from 'react';
-import {
-  ScrollView,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import {
   Container,
   Header,
   Content,
   Footer,
-  FooterTab,
   Button,
   Icon,
   Text,
@@ -21,19 +14,18 @@ import {
   Right,
   View,
   Thumbnail,
-  Tab,
-  Tabs,
 } from 'native-base';
 
 import Footer_Component from '../../Components/Footer_Component';
 
-function Event_Detail(props) {
+export default function Event_Detail(props) {
+  const {navigate, goBack} = props.navigation;
   return (
     <Container>
-      <Header style={{backgroundColor: 'white'}}>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
         <Left>
-          <Button transparent>
-            <Icon style={{color: 'black'}} name="arrow-back" />
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
           </Button>
         </Left>
         <Body>
@@ -41,19 +33,19 @@ function Event_Detail(props) {
             이벤트 상세
           </Title>
         </Body>
-        <Right style={{flexDirection: 'row'}}>
-          <Thumbnail
-            style={{height: 35, resizeMode: 'contain'}}
-            source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-          />
-          <Thumbnail
-            style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-            source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-          />
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
         </Right>
       </Header>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Content>
         <View>
@@ -72,7 +64,7 @@ function Event_Detail(props) {
 
             <TouchableOpacity
               onPress={() => {
-                props.navigation.navigate('Event_List');
+                navigate('Event_List');
               }}>
               <View style={{marginRight: 16}}>
                 <Image
@@ -92,12 +84,9 @@ function Event_Detail(props) {
         </View>
       </Content>
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
       <Footer style={{height: 80}}>
         <Footer_Component />
       </Footer>
     </Container>
   );
 }
-
-export default Event_Detail;

@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 class Product_Item extends Component {
-  render(props) {
+  render() {
     return (
       <View style={styles.ProductContainer}>
         <TouchableOpacity
           onPress={() => {
-            props.navigation.navigate('productDetail1');
+            this.navigation.navigate('productDetail1');
           }}>
           <Image
             style={styles.ImgContent}

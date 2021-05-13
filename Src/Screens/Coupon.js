@@ -27,7 +27,7 @@ import Footer_Component from '../Components/Footer_Component';
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;
 
-export default function Wishlist(props) {
+export default function Coupon(props) {
   const {navigate, goBack} = props.navigation;
   return (
     <Container>
@@ -38,7 +38,7 @@ export default function Wishlist(props) {
           </Button>
         </Left>
         <Body>
-          <Title style={{color: 'black', fontWeight: 'bold'}}>위시리스트</Title>
+          <Title style={{color: 'black', fontWeight: 'bold'}}>쿠폰내역</Title>
         </Body>
         <Right style={{flexDirection: 'row', alignItems: 'center'}}>
           <TouchableOpacity onPress={() => navigate('Search')}>

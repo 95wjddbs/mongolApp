@@ -20,13 +20,14 @@ import {
 
 import Footer_Component from '../../Components/Footer_Component';
 
-function brandDetail(props) {
+export default function Brand_Detail(props) {
+  const {navigate, goBack} = props.navigation;
   return (
     <Container>
-      <Header style={{backgroundColor: 'white'}}>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
         <Left>
-          <Button transparent>
-            <Icon style={{color: 'black'}} name="arrow-back" />
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
           </Button>
         </Left>
         <Body>
@@ -34,19 +35,19 @@ function brandDetail(props) {
             adidas Young Athletes
           </Title>
         </Body>
-        <Right style={{flexDirection: 'row'}}>
-          <Thumbnail
-            style={{height: 35, resizeMode: 'contain'}}
-            source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-          />
-          <Thumbnail
-            style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-            source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-          />
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
         </Right>
       </Header>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Content>
         <View>
@@ -72,7 +73,11 @@ function brandDetail(props) {
                   marginBottom: -120,
                 }}>
                 <Image
-                  style={{width: '20%', resizeMode: 'contain', marginLeft: 20}}
+                  style={{
+                    width: '20%',
+                    resizeMode: 'contain',
+                    marginLeft: 20,
+                  }}
                   source={require('../../images/test_img/br_3.png')}
                 />
                 <Text style={{fontSize: 20, marginLeft: 20}}>
@@ -84,7 +89,7 @@ function brandDetail(props) {
 
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate('productDetail1');
+              navigate('productDetail1');
             }}>
             <View
               style={{
@@ -122,12 +127,9 @@ function brandDetail(props) {
         </View>
       </Content>
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
       <Footer style={{height: 80}}>
         <Footer_Component />
       </Footer>
     </Container>
   );
 }
-
-export default brandDetail;

@@ -1,50 +1,48 @@
 import React, {Component} from 'react';
-import {Image} from 'react-native';
+import {TouchableOpacity, Image, View, ScrollView} from 'react-native';
 import {
   Container,
   Header,
   Content,
-  Footer,
-  Button,
-  Icon,
   Text,
   Left,
-  Body,
-  Title,
   Right,
-  View,
+  Body,
+  Button,
+  Icon,
   Thumbnail,
+  Footer,
+  Title,
 } from 'native-base';
 
 import Footer_Component from '../../Components/Footer_Component';
 
-function Detail1(props) {
+export default function Detail1(props) {
+  const {navigate, goBack} = props.navigation;
   return (
     <Container>
-      <Header style={{backgroundColor: 'white'}}>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
         <Left>
-          <Button transparent>
-            <Icon style={{color: 'black'}} name="arrow-back" />
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
           </Button>
         </Left>
         <Body>
-          <Title style={{color: 'black', fontWeight: 'bold'}}>
-            기획전 상세
-          </Title>
+          <Title style={{color: 'black', fontWeight: 'bold'}}>장바구니</Title>
         </Body>
-        <Right style={{flexDirection: 'row'}}>
-          <Thumbnail
-            style={{height: 35, resizeMode: 'contain'}}
-            source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-          />
-          <Thumbnail
-            style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-            source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-          />
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
         </Right>
       </Header>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Content>
         <View style={{marginTop: 30, alignItems: 'center'}}>
@@ -117,12 +115,9 @@ function Detail1(props) {
         </View>
       </Content>
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
       <Footer style={{height: 80}}>
         <Footer_Component />
       </Footer>
     </Container>
   );
 }
-
-export default Detail1;

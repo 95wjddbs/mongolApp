@@ -27,13 +27,14 @@ import {
 
 import Footer_Component from '../../Components/Footer_Component';
 
-function Detail0(props) {
+export default function Detail0(props) {
+  const {navigate, goBack} = props.navigation;
   return (
     <Container>
-      <Header style={{backgroundColor: 'white'}}>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
         <Left>
-          <Button transparent>
-            <Icon style={{color: 'black'}} name="arrow-back" />
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
           </Button>
         </Left>
         <Body>
@@ -41,19 +42,19 @@ function Detail0(props) {
             기획전 상세
           </Title>
         </Body>
-        <Right style={{flexDirection: 'row'}}>
-          <Thumbnail
-            style={{height: 35, resizeMode: 'contain'}}
-            source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-          />
-          <Thumbnail
-            style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-            source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-          />
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
         </Right>
       </Header>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Content>
         <View>
@@ -69,16 +70,17 @@ function Detail0(props) {
               <Text style={{fontSize: 20}}>2020 S/S BEST 쥬얼리 모음</Text>
               <Text>기획전에 대한 설명을 적으세요</Text>
             </View>
-            <View
-              style={{marginRight: 16}}
-              onStartShouldSetResponder={() => {
-                props.navigation.navigate('Detail1');
+            <TouchableOpacity
+              onPress={() => {
+                navigate('Detail1');
               }}>
-              <Image
-                style={{width: 66, resizeMode: 'contain'}}
-                source={require('../../images/content/btn_exhibition_list.png')}
-              />
-            </View>
+              <View style={{marginRight: 16}}>
+                <Image
+                  style={{width: 66, resizeMode: 'contain'}}
+                  source={require('../../images/content/btn_exhibition_list.png')}
+                />
+              </View>
+            </TouchableOpacity>
           </View>
 
           <View
@@ -110,12 +112,9 @@ function Detail0(props) {
         </View>
       </Content>
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
       <Footer style={{height: 80}}>
         <Footer_Component />
       </Footer>
     </Container>
   );
 }
-
-export default Detail0;

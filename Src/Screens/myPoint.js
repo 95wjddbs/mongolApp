@@ -14,41 +14,36 @@ import {
   Right,
   View,
   Thumbnail,
-  Tab,
-  Tabs,
 } from 'native-base';
 
 import Footer_Component from '../Components/Footer_Component';
 
-import Tab1 from './tabOne';
-import Tab2 from './tabTwo';
-
 function myPoint(props) {
-  const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
+  const {navigate, goBack} = props.navigation;
   return (
     <Container>
-      <Header style={{backgroundColor: 'white'}}>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
         <Left>
-          <Button transparent>
-            <Icon name="arrow-back" />
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
           </Button>
         </Left>
         <Body>
-          <Title>my point</Title>
+          <Title style={{color: 'black', fontWeight: 'bold'}}>내 포인트</Title>
         </Body>
-        <Right style={{flexDirection: 'row'}}>
-          <Thumbnail
-            style={{height: 35, resizeMode: 'contain'}}
-            source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-          />
-          <Thumbnail
-            style={{height: 40, resizeMode: 'contain', marginLeft: -10}}
-            source={{uri: 'https://i.postimg.cc/Prprv05j/i-basket.png'}}
-          />
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
         </Right>
       </Header>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Content>
         <View
@@ -76,18 +71,7 @@ function myPoint(props) {
             </Text>
           </TouchableOpacity>
         </View>
-
-        <Tabs>
-          <Tab heading="Tab1">
-            <Tab1 />
-          </Tab>
-          <Tab heading="Tab2">
-            <Tab2 />
-          </Tab>
-        </Tabs>
       </Content>
-
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */}
 
       <Footer style={{height: 80}}>
         <Footer_Component />

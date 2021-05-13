@@ -32,47 +32,46 @@ const Square_List = [
 
 class Square_Item extends Component {
   render() {
+    const {navigate} = this.props;
     return (
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate('Detail0');
-          }}>
-          <View style={styles.ProductContainer}>
-            {Square_List.map((container_Item, index) => (
-              <Image
-                style={[
-                  styles.container_Item,
-                  index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
-                ]}
-                source={{uri: this.props.pt_image}}
-              />
-            ))}
+        <View style={styles.ProductContainer}>
+          {Square_List.map((container_Item, index) => (
+            <Image
+              style={[
+                styles.container_Item,
+                index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
+              ]}
+              source={{uri: this.props.pt_image}}
+            />
+          ))}
 
-            <View style={styles.TextContent}>
-              <Text
-                adjustsFontSizeToFit={true}
-                numberOfLines={1}
-                style={styles.price}>
-                {this.props.price}
-              </Text>
-              <Text style={styles.sub}>{this.props.sub}</Text>
-            </View>
+          <View style={styles.TextContent}>
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={1}
+              style={styles.price}>
+              {this.props.price}
+            </Text>
+            <Text style={styles.sub}>{this.props.sub}</Text>
           </View>
-        </TouchableOpacity>
+        </View>
       </SafeAreaView>
     );
   }
 }
 
-const Horizonal_Scroll_Square = () => {
-  const renderItem = ({item}) => {
+const Horizonal_Scroll_Square = props => {
+  const renderItem = ({item, props}) => {
     return (
       <Square_Item
         pt_image={item.pt_image1}
         price={item.key}
         sub={item.sub}
         third={item.third}
+        onPress={() => {
+          props.navigation.navigate('Detail0');
+        }}
       />
     );
   };

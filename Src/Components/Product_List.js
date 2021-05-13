@@ -56,6 +56,9 @@ const Product_List = () => {
       data={Add_Product(productList)}
       renderItem={renderItem}
       numColumns={2}
+      onPress={() => {
+        props.navigation.navigate('Detail0');
+      }}
     />
   );
 };

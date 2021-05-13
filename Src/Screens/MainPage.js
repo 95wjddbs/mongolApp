@@ -46,7 +46,7 @@ const MainPage = props => {
 
           <TouchableOpacity
             onPress={() => props.navigation.navigate('Shopping_Cart')}>
-            <Icon name="cart-outline" style={{color: 'black'}} />
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
           </TouchableOpacity>
         </Right>
       </Header>

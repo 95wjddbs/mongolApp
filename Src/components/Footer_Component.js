@@ -24,7 +24,7 @@ function Footer_Component(props) {
         <FooterTab style={{backgroundColor: 'white', alignItems: 'center'}}>
           <ImageButton
             onPress={() => {
-              props.navigation.toggleDrawer();
+              props.navigation.navigate('Category');
             }}
             text="CATEGORY"
             source={require('../images/common/menu_icon01.png')}
@@ -52,7 +52,7 @@ function Footer_Component(props) {
           />
           <ImageButton
             onPress={() => {
-              props.navigation.navigate('Wishlist');
+              props.navigation.navigate('Mypage');
             }}
             text="MY"
             source={require('../images/common/menu_icon05.png')}

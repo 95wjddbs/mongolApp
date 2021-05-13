@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
-import {AppRegistry, ScrollView, View, StyleSheet, Image} from 'react-native';
+import {
+  TouchableOpacity,
+  ScrollView,
+  View,
+  StyleSheet,
+  Image,
+} from 'react-native';
 
-class HorizonalScrollView extends Component {
-  render() {
-    return (
-      <ScrollView
-        contentOffset={{x: 85}}
-        style={{marginTop: -120, width: '100%'}}
-        horizontal={true}
-        showsHorizontalScrollIndicator={true}
-        onMomentumScrollEnd={() => {}}>
+export default function Horizonal_Scroll_Round(props) {
+  const {navigate, goBack} = props.navigation;
+  return (
+    <ScrollView
+      contentOffset={{x: 85}}
+      style={{marginTop: -120, width: '100%'}}
+      horizontal={true}>
+      <TouchableOpacity onPress={() => navigate('Brand')}>
         <View style={styles.viewStyle}>
           <Image
             style={styles.imgStyle}
@@ -32,9 +37,9 @@ class HorizonalScrollView extends Component {
             source={require('../images/test_img/br_5.png')}
           />
         </View>
-      </ScrollView>
-    );
-  }
+      </TouchableOpacity>
+    </ScrollView>
+  );
 }
 const styles = StyleSheet.create({
   viewStyle: {
@@ -52,4 +57,3 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
 });
-export default HorizonalScrollView;
