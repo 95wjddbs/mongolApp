@@ -144,14 +144,15 @@ export default function Mypage(props) {
             justifyContent: 'center',
           }}>
           <Text style={{fontSize: 16, fontWeight: 'bold', marginTop: 16}}>
-            고객님은 GOLD 회원입니다.
+            고객님은<Text style={{color: '#EB7225', fontSize: 15}}> GOLD</Text>{' '}
+            회원입니다.
           </Text>
 
           <View style={{marginTop: 8}}>
             <View
               style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <Text style={{fontSize: 14}}>다음 등급까지 필요한 구매금액</Text>
-              <Text style={{fontSize: 16, fontWeight: 'bold'}}>+22,500T</Text>
+              <Text style={{fontSize: 16, fontWeight: 'bold'}}>+22,500 ₮</Text>
             </View>
             <View
               style={{
@@ -161,7 +162,7 @@ export default function Mypage(props) {
                 paddingBottom: 24,
               }}>
               <Text style={{fontSize: 14}}>당월 구매금액</Text>
-              <Text style={{fontSize: 16, fontWeight: 'bold'}}>87,500T</Text>
+              <Text style={{fontSize: 16, fontWeight: 'bold'}}>87,500 ₮</Text>
             </View>
           </View>
         </View>
@@ -202,7 +203,7 @@ export default function Mypage(props) {
                 }}
                 source={require('../images/content/mypage02.png')}
               />
-              <View style={{flexDirection: 'column', marginLeft: 16}}>
+              <View style={{flexDirection: 'column', marginLeft: 8}}>
                 <Text style={{fontWeight: 'bold'}}>포인트적림</Text>
                 <Text>구매금액 5%적립</Text>
               </View>
@@ -217,7 +218,7 @@ export default function Mypage(props) {
                 }}
                 source={require('../images/content/mypage03.png')}
               />
-              <View style={{flexDirection: 'column', marginLeft: 16}}>
+              <View style={{flexDirection: 'column', marginLeft: 8}}>
                 <Text style={{fontWeight: 'bold'}}>할인 쿠폰</Text>
                 <Text>각 1매 (총 2매) 지급</Text>
               </View>
@@ -235,20 +236,22 @@ export default function Mypage(props) {
             paddingTop: 24,
             paddingBottom: 24,
           }}>
-          <View style={{flexDirection: 'column'}}>
-            <Image
-              style={{
-                resizeMode: 'cover',
-                height: 60,
-                width: 60,
-                marginBottom: 8,
-              }}
-              source={require('../images/content/mypage04.png')}
-            />
-            <Text>주문내역</Text>
-          </View>
+          <TouchableOpacity onPress={() => navigate('Order_List_Place')}>
+            <View style={{flexDirection: 'column'}}>
+              <Image
+                style={{
+                  resizeMode: 'cover',
+                  height: 60,
+                  width: 60,
+                  marginBottom: 8,
+                }}
+                source={require('../images/content/mypage04.png')}
+              />
+              <Text>주문내역</Text>
+            </View>
+          </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigate('Coupon')}>
+          <TouchableOpacity onPress={() => navigate('Log_In')}>
             <View style={{flexDirection: 'column'}}>
               <Image
                 style={{
@@ -263,18 +266,20 @@ export default function Mypage(props) {
             </View>
           </TouchableOpacity>
 
-          <View style={{flexDirection: 'column'}}>
-            <Image
-              style={{
-                resizeMode: 'cover',
-                height: 60,
-                width: 60,
-                marginBottom: 8,
-              }}
-              source={require('../images/content/mypage06.png')}
-            />
-            <Text>구매후기</Text>
-          </View>
+          <TouchableOpacity onPress={() => navigate('Mypage_Review')}>
+            <View style={{flexDirection: 'column'}}>
+              <Image
+                style={{
+                  resizeMode: 'cover',
+                  height: 60,
+                  width: 60,
+                  marginBottom: 8,
+                }}
+                source={require('../images/content/mypage06.png')}
+              />
+              <Text>구매후기</Text>
+            </View>
+          </TouchableOpacity>
         </View>
 
         <List

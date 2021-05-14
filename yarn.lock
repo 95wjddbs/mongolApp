@@ -2196,6 +2196,13 @@ accepts@^1.3.7, accepts@~1.3.5, accepts@~1.3.7:
     mime-types "~2.1.24"
     negotiator "0.6.2"
 
+accordion-collapse-react-native@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/accordion-collapse-react-native/-/accordion-collapse-react-native-1.0.0.tgz#d48ee4714b53e3481115cb1d08ae077919651837"
+  integrity sha512-WIGfznOVux+Y3rDljzxc9rEL4mMEB54io6/GVsw7EWmA041JDNYmPj4HSBRSqHqW/YZ+iK3eG0v5WG2Wz1SvSg==
+  dependencies:
+    lodash.get "4.4.2"
+
 acorn-globals@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/acorn-globals/-/acorn-globals-6.0.0.tgz"
@@ -5694,6 +5701,11 @@ lodash.frompairs@^4.0.1:
   resolved "https://registry.npmjs.org/lodash.frompairs/-/lodash.frompairs-4.0.1.tgz"
   integrity sha1-vE5SB/onV8E25XNhTpZkUGsrG9I=
 
+lodash.get@4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
@@ -7150,7 +7162,7 @@ react-native-codegen@^0.0.6:
 
 react-native-drawer@2.5.1:
   version "2.5.1"
-  resolved "https://registry.npmjs.org/react-native-drawer/-/react-native-drawer-2.5.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"
   integrity sha512-cxcQNbSWy5sbGi7anSVp6EDr6JarOBMY9lbFOeLFeVYbONiudoqRKbgEsSDgSw3/LFCLvUXK5zdjXCOedeytxQ==
   dependencies:
     prop-types "^15.5.8"

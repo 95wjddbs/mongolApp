@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 class Product_Item extends Component {
   render() {
+    const {navigation} = this.props;
+
     return (
       <View style={styles.ProductContainer}>
         <TouchableOpacity

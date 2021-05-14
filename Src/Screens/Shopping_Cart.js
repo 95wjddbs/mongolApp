@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, Image, View, ScrollView} from 'react-native';
+import {TouchableOpacity, Image, ScrollView} from 'react-native';
 import {
   Container,
   Header,
@@ -15,6 +15,7 @@ import {
   Thumbnail,
   Footer,
   Title,
+  View,
 } from 'native-base';
 
 import Footer_Component from '../Components/Footer_Component';
@@ -49,7 +50,9 @@ export default function Shopping_Cart(props) {
         <ListItem style={{borderBottomWidth: 0}}>
           <CheckBox color="grey" />
           <Body style={{}}>
-            <Text>전체선택(총 3개)</Text>
+            <Text>
+              전체선택(총 <Text style={{color: '#E87B0C'}}>3개</Text>)
+            </Text>
           </Body>
           <Button
             onPress={() => alert('삭제되었습니다')}
@@ -87,18 +90,18 @@ export default function Shopping_Cart(props) {
                     source={require('../images/common/color.png')}
                     style={{resizeMode: 'contain', width: '30%'}}
                   />
-                  <View>
+                  <View style={{marginLeft: 16}}>
                     <Text>옵션: 상품 레드 100 size</Text>
                     <Text note>400포인트 적립 예정</Text>
                     <Text />
-                    <Text>1,400,390T</Text>
+                    <Text>1,400,390₮</Text>
                   </View>
                 </View>
               </Body>
             </ListItem>
           </View>
           <View style={{alignItems: 'flex-end', marginRight: 10, padding: 15}}>
-            <Text>2,800,390 + 0 (배송비) + = 2,800,390T</Text>
+            <Text>2,800,390 + 0 (배송비) + = 2,800,390₮</Text>
           </View>
           <View
             style={{
@@ -161,18 +164,18 @@ export default function Shopping_Cart(props) {
                     source={require('../images/common/color.png')}
                     style={{resizeMode: 'contain', width: '30%'}}
                   />
-                  <View>
+                  <View style={{marginLeft: 16}}>
                     <Text>옵션: 상품 레드 100 size</Text>
                     <Text note>400포인트 적립 예정</Text>
                     <Text />
-                    <Text>1,400,390T</Text>
+                    <Text>1,400,390₮</Text>
                   </View>
                 </View>
               </Body>
             </ListItem>
           </View>
           <View style={{alignItems: 'flex-end', marginRight: 10, padding: 15}}>
-            <Text>2,800,390 + 0 (배송비) + = 2,800,390T</Text>
+            <Text>2,800,390 + 0 (배송비) + = 2,800,390₮</Text>
           </View>
           <View
             style={{
@@ -206,6 +209,73 @@ export default function Shopping_Cart(props) {
                 borderColor: '#EBEBEB',
               }}>
               <Text style={{color: 'black'}}>구매하기</Text>
+            </Button>
+          </View>
+
+          <View style={{backgroundColor: '#F5FAFB', marginTop: 16}}>
+            <Text style={{fontSize: 8}}></Text>
+          </View>
+
+          <View>
+            <View
+              style={{
+                marginTop: 10,
+                padding: 10,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <Text>배송비</Text>
+              <Text>5,000₮</Text>
+            </View>
+            <View
+              style={{
+                paddingLeft: 10,
+                paddingRight: 10,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <Text>총 상품금액</Text>
+              <Text>14,390₮</Text>
+            </View>
+            <View
+              style={{
+                borderBottomColor: 'grey',
+                borderBottomWidth: 2,
+                width: '90%',
+                left: '5%',
+                marginTop: 16,
+              }}></View>
+            <View
+              style={{
+                paddingLeft: 10,
+                paddingRight: 10,
+                marginTop: 16,
+                marginBottom: 16,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <Text>총 결제 예상 금액</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 18}}>19,390₮</Text>
+            </View>
+            <Button
+              onPress={() => navigate('Order_List')}
+              style={{
+                backgroundColor: '#F58966',
+                width: '100%',
+                height: 80,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                주문하기
+              </Text>
             </Button>
           </View>
         </ScrollView>

@@ -11,18 +11,21 @@ import {
 
 const Square_List = [
   {
+    id: 1,
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117904224-ea30a200-b30b-11eb-9c43-51651c24892e.png',
     price: 'O HUI Purchase Apprec...',
     sub: 'Free gift random (Until sold out)',
   },
   {
+    id: 2,
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117904228-eb61cf00-b30b-11eb-83ee-37194ef38eea.png',
     price: 'airvita Purchase Appre....',
     sub: 'Free gift random (Until sold out)',
   },
   {
+    id: 3,
     pt_image1:
       'https://user-images.githubusercontent.com/66461799/117904229-eb61cf00-b30b-11eb-8c14-21b8bbf6aacf.png',
     price: 'Gift Event',
@@ -32,7 +35,6 @@ const Square_List = [
 
 class Square_Item extends Component {
   render() {
-    const {navigate} = this.props;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.ProductContainer}>
@@ -53,7 +55,9 @@ class Square_Item extends Component {
               style={styles.price}>
               {this.props.price}
             </Text>
-            <Text style={styles.sub}>{this.props.sub}</Text>
+            <Text adjustsFontSizeToFit={true} style={styles.sub}>
+              {this.props.sub}
+            </Text>
           </View>
         </View>
       </SafeAreaView>
@@ -65,6 +69,7 @@ const Horizonal_Scroll_Square = props => {
   const renderItem = ({item, props}) => {
     return (
       <Square_Item
+        key={item.id}
         pt_image={item.pt_image1}
         price={item.key}
         sub={item.sub}

@@ -14,6 +14,8 @@ import {
   Right,
   View,
   Thumbnail,
+  List,
+  ListItem,
 } from 'native-base';
 
 import Footer_Component from '../Components/Footer_Component';
@@ -56,7 +58,7 @@ function myPoint(props) {
           }}>
           <View>
             <Text>내 전자화폐</Text>
-            <Text>130,000T</Text>
+            <Text>130,000₮</Text>
           </View>
           <TouchableOpacity>
             <Text
@@ -70,6 +72,110 @@ function myPoint(props) {
               충전하기
             </Text>
           </TouchableOpacity>
+        </View>
+
+        <View>
+          <List>
+            <ListItem thumbnail>
+              <Left
+                style={{
+                  flexDirection: 'column',
+                  borderWidth: 1,
+                  padding: 5,
+                  paddingLeft: 15,
+                  paddingRight: 15,
+                }}>
+                <Text style={{color: 'grey'}}>2020</Text>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>03.24</Text>
+                <Text note style={{fontSize: 12}}>
+                  18:45:47
+                </Text>
+              </Left>
+              <Body>
+                <Text note>충전</Text>
+                <Text style={{fontWeight: 'bold'}}>500,000₮</Text>
+                <Text style={{marginTop: 4}}>기프트 카드</Text>
+              </Body>
+            </ListItem>
+          </List>
+        </View>
+
+        <View>
+          <List>
+            <ListItem thumbnail>
+              <Left
+                style={{
+                  flexDirection: 'column',
+                  borderWidth: 1,
+                  padding: 5,
+                  paddingLeft: 15,
+                  paddingRight: 15,
+                }}>
+                <Text style={{color: 'grey'}}>2020</Text>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>03.24</Text>
+                <Text note style={{fontSize: 12}}>
+                  18:45:47
+                </Text>
+              </Left>
+              <Body>
+                <Text note>적립</Text>
+                <Text style={{fontWeight: 'bold'}}>500,000₮</Text>
+                <Text style={{marginTop: 4}}>상품 구매에 따른 지급</Text>
+              </Body>
+            </ListItem>
+          </List>
+        </View>
+
+        <View>
+          <List>
+            <ListItem thumbnail>
+              <Left
+                style={{
+                  flexDirection: 'column',
+                  borderWidth: 1,
+                  padding: 5,
+                  paddingLeft: 15,
+                  paddingRight: 15,
+                }}>
+                <Text style={{color: 'grey'}}>2020</Text>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>03.24</Text>
+                <Text note style={{fontSize: 12}}>
+                  18:45:47
+                </Text>
+              </Left>
+              <Body>
+                <Text note>충전</Text>
+                <Text style={{fontWeight: 'bold'}}>500,000₮</Text>
+                <Text style={{marginTop: 4}}>기프트 카드</Text>
+              </Body>
+            </ListItem>
+          </List>
+        </View>
+
+        <View>
+          <List>
+            <ListItem thumbnail>
+              <Left
+                style={{
+                  flexDirection: 'column',
+                  borderWidth: 1,
+                  padding: 5,
+                  paddingLeft: 15,
+                  paddingRight: 15,
+                }}>
+                <Text style={{color: 'grey'}}>2020</Text>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>03.24</Text>
+                <Text note style={{fontSize: 12}}>
+                  18:45:47
+                </Text>
+              </Left>
+              <Body>
+                <Text note>충전</Text>
+                <Text style={{fontWeight: 'bold'}}>500,000₮</Text>
+                <Text style={{marginTop: 4}}>기프트 카드</Text>
+              </Body>
+            </ListItem>
+          </List>
         </View>
       </Content>
 

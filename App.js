@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {Button, Image, TouchableOpacity} from 'react-native';
-import {Icon, Text, View} from 'native-base';
+import {Icon} from 'native-base';
 import {
   NavigationContainer,
   DrawerActions,
   useNavigation,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 import MainPage from './Src/Screens/MainPage';
 
 import Category from './Src/Screens/Category';
@@ -15,7 +14,10 @@ import myPoint from './Src/Screens/myPoint';
 import Search from './Src/Screens/Search';
 import Wishlist from './Src/Screens/Wishlist';
 import Mypage from './Src/Screens/Mypage';
+import Mypage_Review from './Src/Screens/Mypage_Review';
 import Shopping_Cart from './Src/Screens/Shopping_Cart';
+import Log_In from './Src/Screens/Log_In';
+import Sign_In from './Src/Screens/Sign_In';
 
 import Detail0 from './Src/Screens/Detail/Detail0';
 import Detail1 from './Src/Screens/Detail/Detail1';
@@ -25,41 +27,16 @@ import productDetail1 from './Src/Screens/Detail/productDetail1';
 import Brand from './Src/Screens/Detail/Brand';
 import brandDetail from './Src/Screens/Detail/brandDetail';
 import Coupon from './Src/Screens/Coupon';
+import Order_List from './Src/Screens/Order_List';
+import Order_List_Place from './Src/Screens/Order_List_Place';
+import Order_List_Pay from './Src/Screens/Order_List_Pay';
 
 import Flatlist_Slider from './Src/Components/Flatlist_Slider';
 import Horizonal_Scroll_Square from './Src/Components/Horizonal_Scroll_Square';
 
 import Footer_Component from './Src/Components/Footer_Component';
 
-Text.defaultProps = Text.defaultProps || {};
-Text.defaultProps.allowFontScaling = false;
-
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-
-const DrawerComponent = () => {
-  return (
-    <Drawer.Navigator
-      initialRouteName="MainPage"
-      drawerType="slide"
-      drawerPosition="left"
-      drawerStyle={{
-        backgroundColor: 'red',
-        width: 200,
-      }}
-      drawerContentOptions={{
-        activeTintColor: 'red',
-        activeBackgroundColor: 'skyblue',
-      }}
-      drawerContent={props => <SideDrawer {...props} />}>
-      <Drawer.Screen
-        name="Category"
-        component={Category}
-        options={{headerShown: false}}
-      />
-    </Drawer.Navigator>
-  );
-};
 
 const MainStackNavigator = props => {
   return (
@@ -68,29 +45,6 @@ const MainStackNavigator = props => {
         name="MainPage"
         options={{
           headerShown: false,
-          // headerLeft: () => (
-          //   <Image
-          //     resizeMode="cover"
-          //     source={require('./Src/images/common/logo.png')}
-          //     style={{
-          //       resizeMode: 'contain',
-          //       width: 160,
-          //       left: 15,
-          //     }}
-          //   />
-          // ),
-          // title: '',
-          // headerRight: () => (
-          //   <TouchableOpacity
-          //     style={{marginRight: 15, flexDirection: 'row'}}
-          //     onPress={() => alert('검색 결과가 없습니다')}>
-          //     <Icon
-          //       name="search-outline"
-          //       style={{color: 'black', marginRight: 15}}
-          //     />
-          //     <Icon name="cart-outline" style={{color: 'black'}} />
-          //   </TouchableOpacity>
-          // ),
         }}
         component={MainPage}
       />
@@ -99,23 +53,26 @@ const MainStackNavigator = props => {
         component={Search}
         options={{
           headerShown: false,
-          headerTitle: 'Please enter a search term',
-          headerTitleStyle: {fontSize: 15},
-          headerRight: () => (
-            <TouchableOpacity
-              style={{marginRight: 15}}
-              onPress={() => alert('검색 결과가 없습니다')}>
-              <Icon name="search-outline" style={{color: 'black'}} />
-            </TouchableOpacity>
-          ),
         }}
       />
       <Stack.Screen
         name="Shopping_Cart"
         component={Shopping_Cart}
         options={{
-          headerTitle: '장바구니',
-          headerTitleStyle: {fontSize: 20, fontWeight: 'bold'},
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Log_In"
+        component={Log_In}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Sign_In"
+        component={Sign_In}
+        options={{
           headerShown: false,
         }}
       />
@@ -126,7 +83,7 @@ const MainStackNavigator = props => {
       />
       <Stack.Screen
         name="Category"
-        component={DrawerComponent}
+        component={Category}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -142,6 +99,11 @@ const MainStackNavigator = props => {
       <Stack.Screen
         name="Mypage"
         component={Mypage}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Mypage_Review"
+        component={Mypage_Review}
         options={{headerShown: false}}
       />
 
@@ -183,6 +145,21 @@ const MainStackNavigator = props => {
       <Stack.Screen
         name="Coupon"
         component={Coupon}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Order_List"
+        component={Order_List}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Order_List_Place"
+        component={Order_List_Place}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Order_List_Pay"
+        component={Order_List_Pay}
         options={{headerShown: false}}
       />
 
