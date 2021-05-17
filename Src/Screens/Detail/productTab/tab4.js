@@ -1,32 +1,119 @@
-import React, { Component } from 'react';
-import {ScrollView, Image, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Left, Body, Title, Right, View, Thumbnail, List, ListItem } from 'native-base';
+import React, {Component} from 'react';
+import {
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
+import {
+  Container,
+  Header,
+  Content,
+  Footer,
+  FooterTab,
+  Button,
+  Icon,
+  Text,
+  Left,
+  Body,
+  Title,
+  Right,
+  View,
+  Thumbnail,
+  List,
+  ListItem,
+} from 'native-base';
 
-function tab4(props){
-    const uri = "https://facebook.github.io/react-native/docs/assets/favicon.png";
-    return (
-      <Container>       
-        <Content style={{marginTop:30}}>
-          <View>
-            <List>
-              <ListItem thumbnail>
-                <Left style={{flexDirection:'column'}}>
-                  <Text>2020</Text>
-                  <Text>03.24</Text>
-                  <Text>18:45:47</Text>
-                </Left>
-                <Body>
-                  <Text note>충전</Text>
-                  <Text>500,000T</Text>
-                  <Text>기프트 카드</Text>
-                </Body>
-              </ListItem>
-            </List>
+function tab4(props) {
+  const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
+  return (
+    <Container>
+      <Content>
+        <View
+          style={{
+            padding: 20,
+            backgroundColor: '#F5FAFB',
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}>
+          <Text style={{}}>adidas Xopoonon</Text>
+
+          <View style={{flexDirection: 'row', marginTop: 8}}>
+            <Text
+              style={{
+                borderWidth: 1,
+                borderColor: '#EBEBEB',
+                backgroundColor: 'white',
+                fontSize: 14,
+                paddingLeft: 10,
+                paddingRight: 10,
+              }}>
+              Contact
+            </Text>
+            <Text note style={{marginLeft: 16, fontSize: 14}}>
+              7755-1111, 7745-5555, 88119900
+            </Text>
           </View>
-        </Content>
 
-      </Container>
-    );
-  }
+          <View style={{flexDirection: 'row', marginTop: 4}}>
+            <Text
+              style={{
+                borderWidth: 1,
+                borderColor: '#EBEBEB',
+                backgroundColor: 'white',
+                fontSize: 14,
+                paddingLeft: 10,
+                paddingRight: 10,
+              }}>
+              address
+            </Text>
+            <Text
+              note
+              numberOfLines={1}
+              adjustsFontSizeToFit={true}
+              style={{marginLeft: 16, fontSize: 14}}>
+              6arhron AyyprnnH 19-p xopoo NapaAokcblh 3yyH ta/n
+            </Text>
+          </View>
 
-  export default tab4;
+          <Button
+            style={{
+              backgroundColor: 'white',
+              width: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+              }}>
+              <Image
+                source={require('../../../images/content/shop_img01.png')}
+                style={{resizeMode: 'cover', width: 20, height: 20}}
+              />
+              <Text style={{marginLeft: 20, fontSize: 14}}>Seller Shop</Text>
+            </View>
+          </Button>
+
+          <Button
+            style={{
+              marginTop: 4,
+              width: '50%',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 80,
+              backgroundColor: 'white',
+              borderWidth: 1,
+              borderColor: 'black',
+            }}>
+            <Text style={{color: 'black'}}>Add to Cart</Text>
+          </Button>
+        </View>
+      </Content>
+    </Container>
+  );
+}
+
+export default tab4;
