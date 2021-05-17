@@ -282,7 +282,7 @@ export default function Shopping_Cart(props) {
       </Content>
 
       <Footer style={{height: 80}}>
-        <Footer_Component />
+        <Footer_Component {...props} />
       </Footer>
     </Container>
   );

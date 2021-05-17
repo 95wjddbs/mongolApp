@@ -129,7 +129,7 @@ export default function Log_In(props) {
       </Content>
 
       <Footer style={{height: 80}}>
-        <Footer_Component />
+        <Footer_Component {...props} />
       </Footer>
     </Container>
   );

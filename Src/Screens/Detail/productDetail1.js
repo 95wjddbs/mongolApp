@@ -227,7 +227,7 @@ export default class Event_Detail extends Component {
         </Content>
 
         <Footer style={{height: 80}}>
-          <Footer_Component />
+          <Footer_Component {...props} />
         </Footer>
       </Container>
     );

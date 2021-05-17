@@ -34,18 +34,24 @@ const Square_List = [
 ];
 
 class Square_Item extends Component {
+  cb = () => {
+    this.props.navigation.push('Detail0');
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.ProductContainer}>
           {Square_List.map((container_Item, index) => (
-            <Image
-              style={[
-                styles.container_Item,
-                index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
-              ]}
-              source={{uri: this.props.pt_image}}
-            />
+            <TouchableOpacity onPress={() => this.cb()}>
+              <Image
+                style={[
+                  styles.container_Item,
+                  index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
+                ]}
+                source={{uri: this.props.pt_image}}
+              />
+            </TouchableOpacity>
           ))}
 
           <View style={styles.TextContent}>
@@ -65,8 +71,7 @@ class Square_Item extends Component {
   }
 }
 
-const Horizonal_Scroll_Square = props => {
-  const {navigate, goBack} = props.navigation;
+function Horizonal_Scroll_Square(props) {
   const renderItem = ({item, props}) => {
     return (
       <Square_Item
@@ -76,7 +81,7 @@ const Horizonal_Scroll_Square = props => {
         sub={item.sub}
         third={item.third}
         onPress={() => {
-          navigate('Detail0');
+          props.navigation.navigate('Detail0');
         }}
       />
     );
@@ -95,7 +100,7 @@ const Horizonal_Scroll_Square = props => {
       renderItem={renderItem}
     />
   );
-};
+}
 
 const styles = StyleSheet.create({
   ProductContainer: {paddingTop: 10},

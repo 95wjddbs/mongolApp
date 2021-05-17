@@ -3,21 +3,21 @@ import {Image} from 'react-native';
 import {Container, Footer, FooterTab, Button, Text} from 'native-base';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
-const ImageButton = ({onPress, source, text}) => {
-  return (
-    <Button onPress={onPress}>
-      <Image style={{height: 30, resizeMode: 'contain'}} source={source} />
-      <Text
-        style={{fontSize: RFValue(8), color: 'black'}}
-        adjustsFontSizeToFit={true}
-        numberOfLines={1}>
-        {text}
-      </Text>
-    </Button>
-  );
-};
-
 function Footer_Component(props) {
+  const ImageButton = ({onPress, source, text}) => {
+    return (
+      <Button onPress={onPress}>
+        <Image style={{height: 30, resizeMode: 'contain'}} source={source} />
+        <Text
+          style={{fontSize: RFValue(8), color: 'black'}}
+          adjustsFontSizeToFit={true}
+          numberOfLines={1}>
+          {text}
+        </Text>
+      </Button>
+    );
+  };
+
   return (
     <Container>
       <Footer style={{height: 80}}>

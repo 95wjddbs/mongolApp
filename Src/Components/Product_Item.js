@@ -10,7 +10,7 @@ class Product_Item extends Component {
       <View style={styles.ProductContainer}>
         <TouchableOpacity
           onPress={() => {
-            this.navigation.navigate('productDetail1');
+            this.props.navigation.navigate('Product_List');
           }}>
           <Image
             style={styles.ImgContent}

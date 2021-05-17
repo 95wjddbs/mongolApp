@@ -242,7 +242,7 @@ export default class Order_List_Pay extends Component {
         </Content>
 
         <Footer style={{height: 80}}>
-          <Footer_Component />
+          <Footer_Component {...props} />
         </Footer>
       </Container>
     );

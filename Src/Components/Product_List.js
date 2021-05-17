@@ -40,6 +40,9 @@ const productList = [
 
 const Product_List = () => {
   const navigation = useNavigation();
+  const goToDetail = () => {
+    navigation.navigate('Detai0');
+  };
   const renderItem = ({item}) => {
     return (
       <Product_Item
