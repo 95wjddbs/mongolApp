@@ -7,7 +7,12 @@ import {
   SafeAreaView,
   FlatList,
   TouchableOpacity,
+  Button,
 } from 'react-native';
+
+// import {Button} from 'native-base';
+
+import {useNavigation} from '@react-navigation/native';
 
 const Square_List = [
   {
@@ -33,26 +38,39 @@ const Square_List = [
   },
 ];
 
-class Square_Item extends Component {
-  cb = () => {
-    this.props.navigation.push('Detail0');
-  };
+const Detail_Image = () => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Detail0')}
+      style={{position: 'absolute'}}>
+      <View
+        style={{
+          width: 180,
+          height: 180,
+          backgroundColor: 'transparent',
+          marginLeft: 15,
+          marginTop: 10,
+        }}></View>
+    </TouchableOpacity>
+  );
+};
 
+class Square_Item extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.ProductContainer}>
           {Square_List.map((container_Item, index) => (
-            <TouchableOpacity onPress={() => this.cb()}>
-              <Image
-                style={[
-                  styles.container_Item,
-                  index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
-                ]}
-                source={{uri: this.props.pt_image}}
-              />
-            </TouchableOpacity>
+            <Image
+              style={[
+                styles.container_Item,
+                index % 2 === 1 && {marginLeft: 15, width: 180, height: 180},
+              ]}
+              source={{uri: this.props.pt_image}}
+            />
           ))}
+          <Detail_Image />
 
           <View style={styles.TextContent}>
             <Text
@@ -72,7 +90,7 @@ class Square_Item extends Component {
 }
 
 function Horizonal_Scroll_Square(props) {
-  const renderItem = ({item, props}) => {
+  const renderItem = ({item}) => {
     return (
       <Square_Item
         key={item.id}
@@ -80,9 +98,6 @@ function Horizonal_Scroll_Square(props) {
         price={item.key}
         sub={item.sub}
         third={item.third}
-        onPress={() => {
-          props.navigation.navigate('Detail0');
-        }}
       />
     );
   };

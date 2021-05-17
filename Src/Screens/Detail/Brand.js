@@ -127,7 +127,7 @@ export default class Brand extends Component {
         </Content>
 
         <Footer style={{height: 80}}>
-          <Footer_Component {...props} />
+          <Footer_Component />
         </Footer>
       </Container>
     );

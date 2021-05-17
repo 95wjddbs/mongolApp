@@ -31,46 +31,39 @@ import Tab1 from './productTab/tab1';
 import Tab2 from './productTab/tab2';
 import Tab3 from './productTab/tab3';
 import Tab4 from './productTab/tab4';
+import Flatlist_Slider_Review from '../../Components/Flatlist_Slider_Review';
 
-export default class Event_Detail extends Component {
-  render() {
-    const {navigate, goBack} = this.props.navigation;
-    return (
-      <Container>
-        <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
-          <Left>
-            <Button transparent onPress={() => goBack()}>
-              <Icon name="arrow-back" style={{color: 'black'}} />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={{color: 'black', fontWeight: 'bold'}}>상품상세</Title>
-          </Body>
-          <Right style={{flexDirection: 'row', alignItems: 'center'}}>
-            <TouchableOpacity onPress={() => navigate('Search')}>
-              <Thumbnail
-                style={{height: 35, resizeMode: 'contain'}}
-                source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
-              />
-            </TouchableOpacity>
+export default function productDetail1(props) {
+  const {navigate, goBack} = props.navigation;
+  return (
+    <Container>
+      <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
+        <Left>
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" style={{color: 'black'}} />
+          </Button>
+        </Left>
+        <Body>
+          <Title style={{color: 'black', fontWeight: 'bold'}}>상품상세</Title>
+        </Body>
+        <Right style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigate('Search')}>
+            <Thumbnail
+              style={{height: 35, resizeMode: 'contain'}}
+              source={{uri: 'https://i.postimg.cc/Qd7tww2b/menu-icon03.png'}}
+            />
+          </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
-              <Icon
-                name="cart-outline"
-                style={{color: 'black', fontSize: 36}}
-              />
-            </TouchableOpacity>
-          </Right>
-        </Header>
+          <TouchableOpacity onPress={() => navigate('Shopping_Cart')}>
+            <Icon name="cart-outline" style={{color: 'black', fontSize: 36}} />
+          </TouchableOpacity>
+        </Right>
+      </Header>
 
-        <Content>
+      <Content>
+        <ScrollView>
           <View>
-            <View>
-              <Image
-                style={{resizeMode: 'contain'}}
-                source={require('../../images/test_img/productDetail.png')}
-              />
-            </View>
+            <Flatlist_Slider_Review {...props} />
 
             <View
               style={{
@@ -126,14 +119,14 @@ export default class Event_Detail extends Component {
                     alignItems: 'center',
                     marginTop: 16,
                   }}>
-                  <Text style={{fontSize: 20}}>269,000 T</Text>
+                  <Text style={{fontSize: 20}}>269,000 ₮</Text>
                   <Text
                     note
                     style={{
                       marginLeft: 20,
                       textDecorationLine: 'line-through',
                     }}>
-                    299,000 T
+                    299,000 ₮
                   </Text>
                 </View>
                 <View style={{marginRight: 16}}>
@@ -156,15 +149,18 @@ export default class Event_Detail extends Component {
                   }}>
                   <Text style={{width: 100}}>Benefits</Text>
                   <Text style={{}}>
-                    100T discount coupon payment per 10000T purchased
+                    100₮ discount coupon payment per 10000₮ purchased
                   </Text>
                 </View>
                 <View
                   style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
+                    alignItems: 'center',
                   }}>
-                  <Text style={{width: 100}}>Delivery Condition</Text>
+                  <Text style={{width: 100, marginTop: 8}}>
+                    Delivery Condition
+                  </Text>
                   <Text>
                     The finished goods will be delivered in 24-48 hours.
                   </Text>
@@ -172,10 +168,13 @@ export default class Event_Detail extends Component {
                 <View
                   style={{
                     flexDirection: 'row',
-                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#EBEBEB',
+                    paddingBottom: 16,
                   }}>
                   <Text style={{width: 100}}>Delivery fee</Text>
-                  <Text>free</Text>
+                  <Text style={{marginTop: 24}}>free</Text>
                 </View>
               </View>
 
@@ -183,7 +182,7 @@ export default class Event_Detail extends Component {
                 <View>
                   <Text>Related item</Text>
                 </View>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', marginLeft: 8}}>
                   <Image
                     style={{
                       resizeMode: 'contain',
@@ -208,7 +207,6 @@ export default class Event_Detail extends Component {
               style={{
                 marginTop: 30,
                 backgroundColor: 'white',
-                marginBottom: -500,
               }}>
               <Tab style={{}} heading="Product description">
                 <Tab1 />
@@ -224,12 +222,12 @@ export default class Event_Detail extends Component {
               </Tab>
             </Tabs>
           </View>
-        </Content>
+        </ScrollView>
+      </Content>
 
-        <Footer style={{height: 80}}>
-          <Footer_Component {...props} />
-        </Footer>
-      </Container>
-    );
-  }
+      <Footer style={{height: 80}}>
+        <Footer_Component {...props} />
+      </Footer>
+    </Container>
+  );
 }

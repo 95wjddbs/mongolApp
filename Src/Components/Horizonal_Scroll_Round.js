@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 export default function Horizonal_Scroll_Round(props) {
-  const {navigate, goBack} = props.navigation;
+  const {navigate} = props.navigation;
   return (
     <ScrollView
       contentOffset={{x: 85}}

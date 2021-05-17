@@ -2,21 +2,30 @@ import React, {Component} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
+const Detail_Image = () => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      onPress={() => navigation.navigate('productDetail1')}
+      style={{position: 'absolute'}}>
+      <View
+        style={{
+          width: 190,
+          height: 190,
+          backgroundColor: 'transparent',
+          marginLeft: 8,
+        }}></View>
+    </TouchableOpacity>
+  );
+};
 class Product_Item extends Component {
   render() {
     const {navigation} = this.props;
 
     return (
       <View style={styles.ProductContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            this.props.navigation.navigate('Product_List');
-          }}>
-          <Image
-            style={styles.ImgContent}
-            source={{uri: this.props.pt_image}}
-          />
-        </TouchableOpacity>
+        <Image style={styles.ImgContent} source={{uri: this.props.pt_image}} />
+        <Detail_Image />
         <View style={styles.TextContent}>
           <Text style={styles.price}>{this.props.price}</Text>
           <Text style={styles.sub}>{this.props.sub}</Text>

@@ -20,7 +20,7 @@ import {
 
 import Footer_Component from '../../Components/Footer_Component';
 
-export default function Brand_Detail(props) {
+export default function brandDetail(props) {
   const {navigate, goBack} = props.navigation;
   return (
     <Container>
@@ -87,10 +87,7 @@ export default function Brand_Detail(props) {
             </CardItem>
           </Card>
 
-          <TouchableOpacity
-            onPress={() => {
-              navigate('productDetail1');
-            }}>
+          <TouchableOpacity onPress={() => navigate('productDetail1')}>
             <View
               style={{
                 flexDirection: 'row',

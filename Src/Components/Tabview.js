@@ -23,13 +23,18 @@ function MD_Pick_Tab(props) {
             borderRadius: 20,
             top: '15%',
           }}
-          activeTextStyle={{color: 'red'}}
+          activeTextStyle={{color: 'black'}}
           heading="1">
           <Tab1 />
         </Tab>
         <Tab
-          tabStyle={{backgroundColor: 'transparent'}}
-          activeTabStyle={{backgroundColor: 'transparent'}}
+          activeTabStyle={{
+            backgroundColor: 'white',
+            height: '70%',
+            borderRadius: 20,
+            top: '15%',
+          }}
+          activeTextStyle={{color: 'black'}}
           heading="2">
           <Tab2 />
         </Tab>
@@ -40,9 +45,7 @@ function MD_Pick_Tab(props) {
             borderRadius: 20,
             top: '15%',
           }}
-          activeTextStyle={{color: 'red'}}
-          tabStyle={{backgroundColor: 'transparent'}}
-          activeTabStyle={{backgroundColor: 'transparent'}}
+          activeTextStyle={{color: 'black'}}
           heading="3">
           <Tab3 />
         </Tab>
@@ -53,9 +56,7 @@ function MD_Pick_Tab(props) {
             borderRadius: 20,
             top: '15%',
           }}
-          activeTextStyle={{color: 'red'}}
-          tabStyle={{backgroundColor: 'transparent'}}
-          activeTabStyle={{backgroundColor: 'transparent'}}
+          activeTextStyle={{color: 'black'}}
           heading="4">
           <Tab4 />
         </Tab>
@@ -66,9 +67,7 @@ function MD_Pick_Tab(props) {
             borderRadius: 20,
             top: '15%',
           }}
-          activeTextStyle={{color: 'red'}}
-          tabStyle={{backgroundColor: 'transparent'}}
-          activeTabStyle={{backgroundColor: 'transparent'}}
+          activeTextStyle={{color: 'black'}}
           heading="5">
           <Tab5 />
         </Tab>
