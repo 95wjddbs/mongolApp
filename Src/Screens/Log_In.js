@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {ScrollView, Image, TouchableOpacity} from 'react-native';
 import {
   Container,
@@ -19,9 +19,11 @@ import {
   ListItem,
 } from 'native-base';
 import Footer_Component from '../Components/Footer_Component';
+import color from 'color';
 
 export default function Log_In(props) {
   const {navigate, goBack} = props.navigation;
+  const [textcolor, setTextcolor] = useState('black');
   return (
     <Container>
       <Header style={{backgroundColor: 'white', alignItems: 'center'}}>
@@ -70,7 +72,7 @@ export default function Log_In(props) {
 
           <View style={{left: '5%'}}>
             <Button
-              onPress={() => navigate('Order_List_Place')}
+              onPress={() => navigate('MainPage')}
               style={{
                 backgroundColor: 'black',
                 width: '90%',
@@ -95,12 +97,16 @@ export default function Log_In(props) {
               justifyContent: 'space-between',
               paddingLeft: '5%',
               paddingRight: '5%',
-              marginTop: 8,
+              marginTop: 16,
             }}>
-            <Text onPress={() => navigate('Sign_In')} style={{}}>
+            <Text
+              onPress={() => navigate('Sign_In')}
+              style={{textDecorationLine: 'underline'}}>
               Sign up
             </Text>
-            <Text style={{color: 'purple'}}>Forgot Password?</Text>
+            <TouchableOpacity onPress={() => setTextcolor({color: 'purple'})}>
+              <Text style={{color: textcolor}}>Forgot Password?</Text>
+            </TouchableOpacity>
           </View>
         </View>
 

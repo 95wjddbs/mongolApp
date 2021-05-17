@@ -66,6 +66,7 @@ class Square_Item extends Component {
 }
 
 const Horizonal_Scroll_Square = props => {
+  const {navigate, goBack} = props.navigation;
   const renderItem = ({item, props}) => {
     return (
       <Square_Item
@@ -75,7 +76,7 @@ const Horizonal_Scroll_Square = props => {
         sub={item.sub}
         third={item.third}
         onPress={() => {
-          props.navigation.navigate('Detail0');
+          navigate('Detail0');
         }}
       />
     );

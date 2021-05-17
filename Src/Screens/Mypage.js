@@ -19,9 +19,6 @@ import {
 } from 'native-base';
 import Footer_Component from '../Components/Footer_Component';
 
-Text.defaultProps = Text.defaultProps || {};
-Text.defaultProps.allowFontScaling = false;
-
 export default function Mypage(props) {
   const {navigate, goBack} = props.navigation;
   return (
