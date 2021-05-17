@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {ScrollView, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {ScrollView, Image, StyleSheet} from 'react-native';
 import {Container, Content, Button, Text, View} from 'native-base';
 
 import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function tab2(props) {
-  const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
   return (
     <Container>
       <Content style={{marginTop: 30}}>

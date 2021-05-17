@@ -1,29 +1,6 @@
 import React, {Component} from 'react';
-import {
-  ScrollView,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
-import {
-  Container,
-  Header,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Icon,
-  Text,
-  Left,
-  Body,
-  Title,
-  Right,
-  View,
-  Thumbnail,
-  List,
-  ListItem,
-} from 'native-base';
+import {ScrollView, Image} from 'react-native';
+import {Container, Content, Button, Text, View} from 'native-base';
 
 import Horizonal_Scroll_Square from '../../../Components/Horizonal_Scroll_Square';
 

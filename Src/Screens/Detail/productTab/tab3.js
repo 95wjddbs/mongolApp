@@ -1,32 +1,8 @@
 import React, {Component} from 'react';
-import {
-  ScrollView,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
-import {
-  Container,
-  Header,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Icon,
-  Text,
-  Left,
-  Body,
-  Title,
-  Right,
-  View,
-  Thumbnail,
-  List,
-  ListItem,
-} from 'native-base';
+import {ScrollView, Image} from 'react-native';
+import {Container, Content, Button, Text, View} from 'native-base';
 
 function tab3(props) {
-  const uri = 'https://facebook.github.io/react-native/docs/assets/favicon.png';
   return (
     <Container style={{height: '100%'}}>
       <Content style={{marginTop: 20}}>
