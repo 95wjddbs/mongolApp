@@ -18,6 +18,7 @@ import Mypage_Review from './Src/Screens/Mypage_Review';
 import Shopping_Cart from './Src/Screens/Shopping_Cart';
 import Log_In from './Src/Screens/Log_In';
 import Sign_In from './Src/Screens/Sign_In';
+import Sign_In_Finish from './Src/Screens/Sign_In_Finish';
 
 import Detail0 from './Src/Screens/Detail/Detail0';
 import Detail1 from './Src/Screens/Detail/Detail1';
@@ -72,6 +73,13 @@ const MainStackNavigator = props => {
       <Stack.Screen
         name="Sign_In"
         component={Sign_In}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Sign_In_Finish"
+        component={Sign_In_Finish}
         options={{
           headerShown: false,
         }}
